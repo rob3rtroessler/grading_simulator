@@ -1,0 +1,60 @@
+.chart-hud {
+    position: absolute;
+    top: 8px; right: 8px;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #e7e7e7;
+    border-left: 4px solid var(--hud-accent, #ff7f0e);
+    border-radius: 8px;
+    padding: 6px 8px;
+    z-index: 3;
+}
+.chart-hud strong, .chart-hud .accent { color: var(--hud-accent, #ff7f0e); }
+
+.markers line, .ecdf path, .hguides line, .pivot line { pointer-events: none; }
+
+
+.sim-line {
+    stroke: #bfc6cf;
+    stroke-width: 1.15;
+    stroke-opacity: 0.1;
+    vector-effect: non-scaling-stroke;
+    transition: stroke-opacity 80ms ease, stroke 80ms ease, stroke-width 80ms ease;
+}
+.sim-line.faded    { stroke-opacity: 0.05; }
+.sim-line.highlight{ stroke: #000; stroke-opacity: 1; stroke-width: 2.2; }
+
+.chart-hud{
+    position:absolute; top:8px; right:8px;
+    background:rgba(255,255,255,0.95);
+    border:1px solid #e7e7e7;
+    border-left:4px solid var(--hud-accent, #ff7f0e);
+    border-radius:8px; padding:6px 8px; z-index:3;
+}
+.chart-hud strong,.chart-hud .accent{ color:var(--hud-accent, #ff7f0e); }
+
+/* Overlay lines shouldn’t block hover on coder lines */
+.markers line, .ecdf path, .hguides line, .pivot line, .axis-label { pointer-events:none; }
+
+/* Axis-label micro style (small, snug to axes) */
+.axis-label {
+    font-size: 11px;
+    fill: #555;
+}
+
+/* Chart tooltip */
+#linesTooltip {
+    position: absolute;
+    pointer-events: none;
+    z-index: 4;
+    background: rgba(255,255,255,0.98);
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 6px 8px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+    font-size: 12px;
+    color: #222;
+    max-width: 240px;
+}
+#linesTooltip table { width: 100%; border-collapse: collapse; }
+#linesTooltip td { padding: 2px 4px; vertical-align: top; }
+#linesTooltip td:first-child { color: #666; white-space: nowrap; }
